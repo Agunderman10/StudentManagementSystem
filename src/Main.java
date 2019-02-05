@@ -34,6 +34,9 @@ public class Main
 		{
 			System.out.println("What is your grade for class " + i + "?");
 			int grade = scanner.nextInt();
+			
+			//i - 1 because in the for loop i starts at 1 and not 0. We use i - 1 to keep the array index from
+			//going out of bounds
 			studentGrades[i - 1] = grade;
 		}
 	}
