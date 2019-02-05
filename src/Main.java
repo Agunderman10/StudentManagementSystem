@@ -25,6 +25,17 @@ public class Main
 		System.out.println("How many classes do you have?");
 		studentNumberOfClasses = scanner.nextInt();
 		
+		//init array that will contain the student's grades
+		int[] studentGrades = new int[studentNumberOfClasses];
+		
+		//ask the student for their grade in each of their classes depending on how many classes they said they have
+		//we take each grade and add it to the studentGrades array
+		for(int i = 1; i <= studentNumberOfClasses; i++) 
+		{
+			System.out.println("What is your grade for class " + i + "?");
+			int grade = scanner.nextInt();
+			studentGrades[i - 1] = grade;
+		}
 	}
 
 }
