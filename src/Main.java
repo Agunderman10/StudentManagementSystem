@@ -29,7 +29,7 @@ public class Main
 		
 		//init arrayslists that will contain student class grades and names
 		ArrayList<String> studentClassNames = new ArrayList<>();
-		ArrayList<Integer> studentGrades = new ArrayList<>();
+		ArrayList<Double> studentGrades = new ArrayList<>();
 		
 		//ask the student for their grade in each of their classes depending on how many classes they said they have
 		//we take each grade and add it to the studentGrades arraylist
@@ -39,7 +39,7 @@ public class Main
 			System.out.println("What is the name of class " + i + "?");
 			String name = scanner.next();
 			System.out.println("What is your grade for class " + i + "?");
-			int grade = scanner.nextInt();
+			double grade = scanner.nextDouble();
 			
 			//add class names and grades to the names and grades arraylists
 			studentClassNames.add(name);
