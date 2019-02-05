@@ -11,6 +11,8 @@ public class Main
 		String studentGender;
 		int studentNumberOfClasses;
 		double studentGpa; /* can be calculated later */
+		ArrayList<String> studentClassNames = new ArrayList<>();
+		ArrayList<Double> studentGrades = new ArrayList<>();
 
 		Scanner scanner = new Scanner(System.in);
 		
@@ -25,10 +27,6 @@ public class Main
 		
 		System.out.println("How many classes do you have?");
 		studentNumberOfClasses = scanner.nextInt();
-		
-		//init arrayslists that will contain student class grades and names
-		ArrayList<String> studentClassNames = new ArrayList<>();
-		ArrayList<Double> studentGrades = new ArrayList<>();
 		
 		//ask the student for their grade in each of their classes depending on how many classes they said they have
 		//we take each grade and add it to the studentGrades arraylist
