@@ -12,7 +12,7 @@ public class Main
 		double studentGpa; /* can be calculated later */
 
 		Scanner scan = new Scanner(System.in);
-
+		
 		System.out.println("Hello! What is your name?");
 	}
 
