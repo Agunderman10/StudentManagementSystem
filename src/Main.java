@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-//this is a test
+
 public class Main
 {
 
