@@ -34,7 +34,7 @@ public class UserInteraction
 		
 		if(userChosenFunction == 1) 
 	    {
-	        GetUserInfo();
+	        GetInfoToCreateNewAccount();
 	    }
 	    else if(userChosenFunction == 2) 
 	    {
@@ -57,7 +57,7 @@ public class UserInteraction
 		fileWriter.close();
 	}
 	
-	private void GetUserInfo() 
+	private void GetInfoToCreateNewAccount() 
 	{
 		System.out.println("Please enter your name.");
         studentName = scanner.next();
