@@ -1,16 +1,9 @@
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class UserInteraction 
 {
-	private String studentName;
+	private String studentName = "andrew";
     private int studentAge;
     private String studentGender;
     private int studentNumberOfClasses;
@@ -18,6 +11,7 @@ public class UserInteraction
     private ArrayList<String> studentClassNames = new ArrayList<>();
     private ArrayList<Double> studentGrades = new ArrayList<>();
 	private Scanner scanner = new Scanner(System.in);
+	private Formatter formatter;
 	
 	public void AskUserForFunctionChoice()
 	{
@@ -44,14 +38,22 @@ public class UserInteraction
 	    }
 	    else if(userChosenFunction == 2) 
 	    {
-	        try(Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("Accounts.txt"),"UTF-8"))) {
-	        	writer.write("hi");
-	        }
-	        catch(Exception e) {
-	        	System.out.println("Failed to print to file.");
-	        }
+	    	try 
+	    	{
+	    		File accountsContainerFile = new File("Accounts.txt");
+	    		WriteAccountInfoToFile(studentName + " \n", accountsContainerFile);
+	    	}
+	    	catch(IOException e) 
+	    	{
+	    		System.out.println("Unable to create account.");
+	    	}
 	    }
-		
+	}
+	
+	private void WriteAccountInfoToFile(String string, File f) throws IOException {
+		FileWriter fileWriter = new FileWriter(f, true);
+		fileWriter.write(string);
+		fileWriter.close();
 	}
 	
 	public void GetUserInfo() 
