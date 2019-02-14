@@ -1,4 +1,5 @@
 
-public class UserInteraction {
+public class UserInteraction 
+{
 
 }

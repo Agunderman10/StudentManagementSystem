@@ -6,6 +6,8 @@ public class Main
 
     public static void main(String[] args)
     {
+    	
+    	UserInteraction userInteraction = new UserInteraction();
         String studentName;
         int studentAge;
         String studentGender;
