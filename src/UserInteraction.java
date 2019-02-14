@@ -104,7 +104,7 @@ public class UserInteraction
 		fileWriter.close();
 	}
 	
-	public void GPACalculator() 
+	private void GPACalculator() 
 	{
         double numerator = 0;
         double denominator;
@@ -118,7 +118,7 @@ public class UserInteraction
         System.out.println("Student's overall GPA is: " + studentGpa);
 	}
 	
-	public void ToDoList() 
+	private void ToDoList() 
 	{
 		final int MAX = 50;
         ArrayList<String> toDoList = new ArrayList<>();
