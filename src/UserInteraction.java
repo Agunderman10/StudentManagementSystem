@@ -12,7 +12,7 @@ public class UserInteraction
     private ArrayList<Double> studentGrades = new ArrayList<>();
 	private Scanner scanner = new Scanner(System.in);
 	
-	public void AskUserForFunctionChoice() 
+	public void AskUserForFunctionChoice()
 	{
 		int userChosenFunction = 0;
 		
