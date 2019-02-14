@@ -54,7 +54,7 @@ public class UserInteraction
 	{
         double numerator = 0;
         double denominator;
-        for(int x = 0; x <= studentGrades.size()-1; x++)
+        for(int x = 0; x <= studentGrades.size() - 1; x++)
         {
             numerator = numerator + studentGrades.get(x);
             denominator = x + 1;
