@@ -15,6 +15,10 @@ public class Main
         ArrayList<Double> studentGrades = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to the Student Management System built by Andrew and Lexi! Type 1 if you "
+        		+ "would like to create an account, type 2 if you would like to edit a current account's "
+        		+ "information, or type 3 if you would like to view your grades or gpa.");
 
         System.out.println("Please enter your name.");
         studentName = scanner.next();
@@ -79,7 +83,7 @@ public class Main
                 int count = 0;
                 if (option == 1) {  
                     System.out.println("Type an item that you would like to enter in your To Do list, then press enter/return to add it to the list. You can have up to 50 items in the list at a time. If you would like to stop entering items, type 'stop'.");
-                    for (int i=0;i<MAX;i++) {
+                    for (int i = 0; i < MAX; i++) {
                         toDoList.add(input.nextLine());
                         if (toDoList.get(i).equals("stop")) break;
                         count++;
