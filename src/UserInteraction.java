@@ -3,7 +3,9 @@ import java.util.*;
 
 public class UserInteraction 
 {
-	private String studentName = "andrew";
+	private String studentName;
+	private String studentUsername;
+	private String studentPassword;
     private int studentAge;
     private String studentGender;
     private int studentNumberOfClasses;
@@ -38,27 +40,18 @@ public class UserInteraction
 	    }
 	    else if(userChosenFunction == 2) 
 	    {
-	    	try 
-	    	{
-	    		File accountsContainerFile = new File("Accounts.txt");
-	    		WriteAccountInfoToFile(studentName + " \n", accountsContainerFile);
-	    	}
-	    	catch(IOException e) 
-	    	{
-	    		System.out.println("Unable to create account.");
-	    	}
+	    	
 	    }
-	}
-	
-	private void WriteAccountInfoToFile(String string, File f) throws IOException 
-	{
-		FileWriter fileWriter = new FileWriter(f, true);
-		fileWriter.write(string);
-		fileWriter.close();
 	}
 	
 	private void GetInfoToCreateNewAccount() 
 	{
+		System.out.println("Please enter the username for your new account.");
+		studentUsername = scanner.next();
+		
+		System.out.println("Please enter the password for your new account. ");
+		studentPassword = scanner.next();
+		
 		System.out.println("Please enter your name.");
         studentName = scanner.next();
 
@@ -85,6 +78,30 @@ public class UserInteraction
             studentClassNames.add(name);
             studentGrades.add(grade);
         }
+        
+        //print new account info to accounts file
+        try 
+    	{
+    		File accountsContainerFile = new File("Accounts.txt");
+    		WriteAccountInfoToFile(studentUsername + " ", studentPassword + " ", studentName + " ", studentAge + " ", 
+    				studentGender + "\n", accountsContainerFile);
+    	}
+    	catch(IOException e) 
+    	{
+    		System.out.println("Unable to create account.");
+    	}
+	}
+	
+	private void WriteAccountInfoToFile(String accountUsername, String accountPassword,
+			String studentName, String studentAge, String studentGender, File file) throws IOException 
+	{
+		FileWriter fileWriter = new FileWriter(file, true);
+		fileWriter.write(accountUsername);
+		fileWriter.write(accountPassword);
+		fileWriter.write(studentName);
+		fileWriter.write(studentAge);
+		fileWriter.write(studentGender);
+		fileWriter.close();
 	}
 	
 	public void GPACalculator() 
