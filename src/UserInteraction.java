@@ -57,7 +57,7 @@ public class UserInteraction
 		fileWriter.close();
 	}
 	
-	public void GetUserInfo() 
+	private void GetUserInfo() 
 	{
 		System.out.println("Please enter your name.");
         studentName = scanner.next();
