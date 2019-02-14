@@ -50,7 +50,8 @@ public class UserInteraction
 	    }
 	}
 	
-	private void WriteAccountInfoToFile(String string, File f) throws IOException {
+	private void WriteAccountInfoToFile(String string, File f) throws IOException 
+	{
 		FileWriter fileWriter = new FileWriter(f, true);
 		fileWriter.write(string);
 		fileWriter.close();
