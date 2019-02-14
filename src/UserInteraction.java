@@ -23,9 +23,6 @@ public class UserInteraction
 		        	+ "information.");
 		    userChosenFunction = scanner.nextInt();
 		    //this will crash if user inputs a string, need to fix later
-			
-		    System.out.println("Please enter a valid option, 1 or 2.");
-			
 	        
 	        if(userChosenFunction != 1 && userChosenFunction != 2) 
 	        {
