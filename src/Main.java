@@ -6,7 +6,7 @@ public class Main
     	UserInteraction userInteraction = new UserInteraction();
         
         userInteraction.AskUserForFunctionChoice();
-        userInteraction.GetUserInfo();
+        //userInteraction.GetUserInfo();
         userInteraction.GPACalculator();
         userInteraction.ToDoList();
     }

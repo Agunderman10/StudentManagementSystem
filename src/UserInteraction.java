@@ -14,10 +14,35 @@ public class UserInteraction
 	
 	public void AskUserForFunctionChoice() 
 	{
-		System.out.println("Welcome to the Student Management System built by Andrew and Lexi! Type 1 if you "
-        		+ "would like to create an account, type 2 if you would like to edit a current account's "
-        		+ "information, or type 3 if you would like to view your grades or gpa.");
-        int userChosenFunction = scanner.nextInt();
+		int userChosenFunction = 0;
+		
+		do 
+		{
+			System.out.println("Welcome to the Student Management System built by Andrew and Lexi! Type 1 if you "
+		        	+ "would like to create an account or type 2 if you would like to view or edit a current account's"
+		        	+ "information.");
+		    userChosenFunction = scanner.nextInt();
+		    //this will crash if user inputs a string, need to fix later
+			
+		    System.out.println("Please enter a valid option, 1 or 2.");
+			
+	        
+	        if(userChosenFunction != 1 && userChosenFunction != 2) 
+	        {
+	        	System.out.println("Please enter a valid option, 1 or 2.");
+	        }
+		}
+		while(userChosenFunction != 1 && userChosenFunction != 2); 
+		
+		if(userChosenFunction == 1) 
+	    {
+	        GetUserInfo();
+	    }
+	    else if(userChosenFunction == 2) 
+	    {
+	        //add method here
+	    }
+		
 	}
 	
 	public void GetUserInfo() 
