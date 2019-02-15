@@ -13,7 +13,6 @@ public class UserInteraction
     private ArrayList<String> studentClassNames = new ArrayList<>();
     private ArrayList<Double> studentGrades = new ArrayList<>();
 	private Scanner scanner = new Scanner(System.in);
-	private Formatter formatter;
 	
 	public void AskUserForFunctionChoice()
 	{
