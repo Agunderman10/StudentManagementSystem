@@ -39,7 +39,7 @@ public class UserInteraction
 	    }
 	    else if(userChosenFunction == 2) 
 	    {
-	    	
+	    	Login();
 	    }
 	}
 	
@@ -103,6 +103,47 @@ public class UserInteraction
 		fileWriter.close();
 	}
 	
+	private void Login() 
+	{
+		Scanner scanFile = null;
+		
+		try
+		{
+			scanFile = new Scanner(new File("Accounts.txt"));
+		}
+		catch(Exception e)
+		{
+			System.out.println("Could not find file.");
+		}
+		
+		String username = scanFile.next();
+		String password = scanFile.next();
+		System.out.println("Should be " + username);
+		System.out.println("Please enter your username.");
+		String enteredUsername = scanner.next();
+		
+		while(!(username.equals(enteredUsername)))
+		{
+			System.out.println("Incorrect username.");
+			System.out.println("Please enter your username.");
+			enteredUsername = scanner.next();
+		}
+		
+		System.out.println("Please enter your password.");
+		String enteredPassword = scanner.next();
+		
+		while(!(password.equals(enteredPassword)))
+		{
+			System.out.println("Incorrect password.");
+			System.out.println("Please enter your password.");
+			enteredPassword = scanner.next();
+		}
+		
+		System.out.println("Hello " + username);
+		
+		scanFile.close();
+		
+	}
 	private void GPACalculator() 
 	{
         double numerator = 0;
