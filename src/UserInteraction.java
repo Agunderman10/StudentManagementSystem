@@ -118,7 +118,7 @@ public class UserInteraction
 		
 		String username = scanFile.next();
 		String password = scanFile.next();
-		System.out.println("Should be " + username);
+		
 		System.out.println("Please enter your username.");
 		String enteredUsername = scanner.next();
 		
@@ -139,7 +139,31 @@ public class UserInteraction
 			enteredPassword = scanner.next();
 		}
 		
-		System.out.println("Hello " + username);
+		String GetStudentName = scanFile.next();
+		
+		System.out.println("Welcome " + GetStudentName + ". Type 1 if you would like to see your GPA or type 2 if "
+				+ "you would like to see your to do list.");
+		String userChoice = scanner.next();
+		
+		while(userChoice != "1" || userChoice != "2")
+		{
+			if(userChoice.equals("1")) 
+			{
+				GPACalculator();
+				return;
+			}
+			else if (userChoice.equals("2"))
+			{
+				ToDoList();
+				return;
+			}
+			else
+			{
+				System.out.println("Invalid option. Please choose a valid"
+						+ " option.");
+				userChoice = scanner.next();
+			}
+		}
 		
 		scanFile.close();
 		
