@@ -89,6 +89,8 @@ public class UserInteraction
     	{
     		System.out.println("Unable to create account.");
     	}
+        
+        AfterLogin();
 	}
 	
 	private void WriteAccountInfoToFile(String accountUsername, String accountPassword,
@@ -139,6 +141,25 @@ public class UserInteraction
 			enteredPassword = scanner.next();
 		}
 		
+		AfterLogin();
+		
+		scanFile.close();
+	}
+	
+	private void AfterLogin() 
+	{
+		Scanner scanFile = null;
+		try 
+		{
+			scanFile = new Scanner(new File("Accounts.txt"));
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Could not find file.");
+		}
+		
+		scanFile.next();
+		scanFile.next();
 		String GetStudentName = scanFile.next();
 		
 		System.out.println("Welcome " + GetStudentName + ". Type 1 if you would like to see your GPA or type 2 if "
@@ -164,10 +185,8 @@ public class UserInteraction
 				userChoice = scanner.next();
 			}
 		}
-		
-		scanFile.close();
-		
 	}
+	
 	private void GPACalculator() 
 	{
         double numerator = 0;
